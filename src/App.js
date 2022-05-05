@@ -2,10 +2,15 @@ import { useReducer } from "react"
 import DigitButton from "./DigitButton"
 import OperationButton from "./OperationButton"
 import "./styles.css"
+import countapi from 'countapi-js';
+
+countapi.visits('global').then((result) => {
+  console.log(result.value);
+});
 
 export const ACTIONS = {
   ADD_DIGIT: "add-digit",
-  CHOOSE_OPERATION: "choose-operation",
+  CHOOSE_OPERATION: "choose-operation", 
   CLEAR: "clear",
   DELETE_DIGIT: "delete-digit",
   EVALUATE: "evaluate",
